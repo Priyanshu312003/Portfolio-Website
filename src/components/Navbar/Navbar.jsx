@@ -23,7 +23,6 @@ export function Navbar() {
         setIsOpen(false);
     }
 
-
     const menuItems = [
         { id: "about", label: "About" },
         { id: "skills", label: "Skills" },
@@ -31,9 +30,9 @@ export function Navbar() {
         { id: "work", label: "Work" }
     ]
     return (
-        <nav className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] lg:px-[20vw] ${isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
+        <nav className={`fixed top-0 w-full z-100 transition duration-300 px-[7vw] lg:px-[20vw] ${isScrolled ? " backdrop-blur-md " : "bg-transparent"
             }`}>
-            <div className="text-white py-5 flex justify-between items-">
+            <div className="text-white py-5 flex justify-between items-center">
                 {/* logo */}
                 <div className="text-lg font-semibold cursor-pointer">
                     <span className=" text-[#8245ec]">&lt;</span>
@@ -89,7 +88,7 @@ export function Navbar() {
                 {/*Mobile menu items*/}
                 {
                     isOpen && (
-                        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg">
+                        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-opacity-50  backdrop-blur-lg z-50 rounded-lg shadow-lg md:hidden ">
                             <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
                                 {menuItems.map((item) => {
                                     return (
@@ -119,7 +118,6 @@ export function Navbar() {
                                     </a>
                                 </div>
                             </ul>
-
                         </div>
                     )
                 }
